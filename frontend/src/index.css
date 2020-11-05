@@ -6,7 +6,12 @@
 }
 
 body {
-  background: radial-gradient(#f8d38a, #ecc371);
+  background: radial-gradient(#d8bd88a3, #ecc371e0);
+}
+
+.card {
+  background: transparent;
+  border: 1px solid black;
 }
 
 main {
@@ -21,4 +26,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
+}
+
+.nav-link {
+  color: black;
 }
