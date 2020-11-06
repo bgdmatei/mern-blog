@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => {
   return (
@@ -12,8 +13,12 @@ const Header = () => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='ml-auto'>
-          <Nav.Link href='#'>Home</Nav.Link>
-          <Nav.Link href='#'>Create post</Nav.Link>
+          <LinkContainer to='/'>
+            <Nav.Link href='#'>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to='/article/new'>
+            <Nav.Link>Create post</Nav.Link>
+          </LinkContainer>
           <Nav.Link href='#'>Profile</Nav.Link>
           <Nav.Link href='#'>Logout</Nav.Link>
         </Nav>
