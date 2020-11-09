@@ -13,7 +13,7 @@ app.get('/api/articles', (req, res) => {
   res.json(articles);
 });
 
-app.get('/api/articles/:id', (req, res) => {
+app.get('/api/article/:id', (req, res) => {
   const article = articles.find((a) => a._id === req.params.id);
   res.json(article);
 });
