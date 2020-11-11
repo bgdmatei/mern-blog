@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import axios from 'axios';
 
 const ArticleScreen = ({ match }) => {
@@ -13,10 +15,20 @@ const ArticleScreen = ({ match }) => {
   }, [match]);
 
   return (
-    <div>
-      <h1>{article.title}</h1>
-      <p>{article.content}</p>
-    </div>
+    <>
+      <Card>
+        <Card.Header>{article.title}</Card.Header>
+        <Card.Body>
+          <blockquote className='blockquote mb-0'>
+            <p>{article.content}</p>
+            <footer className='blockquote-footer'>User</footer>
+          </blockquote>
+        </Card.Body>
+      </Card>
+      <LinkContainer to='/' className='my-3'>
+        <Button variant='outline-secondary'>Go back</Button>
+      </LinkContainer>
+    </>
   );
 };
 
