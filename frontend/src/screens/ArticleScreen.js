@@ -25,8 +25,8 @@ const ArticleScreen = ({ match }) => {
           </blockquote>
         </Card.Body>
       </Card>
-      <LinkContainer to='/' className='my-3'>
-        <Button variant='outline-secondary'>Go back</Button>
+      <LinkContainer to='/' className='my-3' activeClassName=''>
+        <Button variant='outline-secondary'>Go Back</Button>
       </LinkContainer>
     </>
   );
