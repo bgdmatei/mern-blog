@@ -7,6 +7,7 @@ const Article = ({ article }) => {
   return (
     <>
       <Card className='m-3 text-center'>
+        <Card.Img variant='top' src='holder.js/100px160' />
         <Card.Body>
           <a href={`/article/${article._id}`}>
             <Card.Title as='div'>
