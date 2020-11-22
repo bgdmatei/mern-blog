@@ -6,8 +6,7 @@ const {
 } = require('../controllers/articleController');
 const router = express.Router();
 
-router.route('/').get(getArticles);
+router.route('/').get(getArticles).post(createArticle);
 router.route('/:id').get(getArticleById);
-router.route('/new').post(createArticle);
 
 module.exports = router;

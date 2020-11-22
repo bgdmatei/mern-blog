@@ -30,10 +30,11 @@ const createArticle = asyncHandler(async (req, res) => {
   const article = new Article({
     title: req.body.title,
     content: req.body.content,
+    image: req.body.image,
   });
 
   const createdArticle = await article.save();
-  res.status(201).json(createArticle);
+  res.status(201).json(createdArticle);
 });
 
 module.exports = { getArticles, getArticleById, createArticle };

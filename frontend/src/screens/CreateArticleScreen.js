@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
+import { createArticle } from '../actions/articleActions';
 
 const CreateArticle = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(e);
+    dispatch(createArticle());
   };
 
   return (
@@ -21,7 +26,7 @@ const CreateArticle = () => {
             value={title}
             placeholder='Enter title'
             onChange={(e) => setTitle(e.target.value)}
-          />
+          ></Form.Control>
           <Form.Label>Article Content</Form.Label>
           <Form.Control
             as='textarea'

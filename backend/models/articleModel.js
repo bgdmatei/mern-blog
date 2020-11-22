@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const articleSchema = mongoose.Schema(
   {
-    image: String,
     title: {
       type: String,
       required: true,
     },
     content: String,
+    image: String,
   },
   {
     timestamps: true,
