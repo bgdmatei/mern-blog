@@ -8,7 +8,8 @@ const ArticleScreen = ({ match }) => {
 
   useEffect(() => {
     const fetchArticle = async () => {
-      const { data } = await axios.get(`/api/article/${match.params.id}`);
+      const { data } = await axios.get(`/api/articles/${match.params.id}`);
+
       setArticle(data);
     };
     fetchArticle();

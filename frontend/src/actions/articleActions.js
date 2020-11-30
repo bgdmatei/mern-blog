@@ -29,11 +29,11 @@ export const listArticles = () => async (dispatch) => {
   }
 };
 
-export const createArticle = () => async (dispatch) => {
+export const createArticle = (title, content) => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_CREATE_REQUEST });
 
-    const { data } = await axios.post('/api/articles/');
+    const { data } = await axios.post('/api/articles/', { title, content });
 
     dispatch({
       type: ARTICLE_CREATE_SUCCESS,

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { createArticle } from '../actions/articleActions';
 
-const CreateArticle = () => {
+const CreateArticle = ({ history }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -11,8 +11,8 @@ const CreateArticle = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(e);
-    dispatch(createArticle());
+    dispatch(createArticle(title, content));
+    history.push('/');
   };
 
   return (

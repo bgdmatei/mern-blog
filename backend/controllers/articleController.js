@@ -5,7 +5,7 @@ const Article = require('../models/articleModel');
 // @route  GET /api/articles
 // @access  Public
 const getArticles = asyncHandler(async (req, res) => {
-  const articles = await Article.find({});
+  const articles = await Article.find({}).sort({ _id: -1 });
   res.json(articles);
 });
 
