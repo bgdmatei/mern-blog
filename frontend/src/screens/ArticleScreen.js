@@ -18,11 +18,10 @@ const ArticleScreen = ({ match }) => {
   return (
     <>
       <Card>
-        <Card.Header>{article.title}</Card.Header>
-        <Card.Body>
+        <Card.Header style={{ fontSize: '32px' }}>{article.title}</Card.Header>
+        <Card.Body style={{ fontSize: '16px' }}>
           <blockquote className='blockquote mb-0'>
             <p>{article.content}</p>
-            <footer className='blockquote-footer'>User</footer>
           </blockquote>
         </Card.Body>
       </Card>
