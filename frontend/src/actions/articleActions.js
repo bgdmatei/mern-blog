@@ -33,7 +33,7 @@ export const createArticle = () => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_CREATE_REQUEST });
 
-    const { data } = await axios.post('/api/articles/', {});
+    const { data } = await axios.post('/api/articles/');
 
     dispatch({
       type: ARTICLE_CREATE_SUCCESS,

@@ -16,7 +16,7 @@ const Header = () => {
           <LinkContainer to='/'>
             <Nav.Link href='#'>Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to='/article/new'>
+          <LinkContainer to='/new'>
             <Nav.Link>Create post</Nav.Link>
           </LinkContainer>
           <Nav.Link href='#'>Profile</Nav.Link>
