@@ -42,7 +42,7 @@ export const articleUpdateReducer = (state = { article: {} }, action) => {
     case ARTICLE_UPDATE_REQUEST:
       return { loading: true };
     case ARTICLE_UPDATE_SUCCESS:
-      return { loading: false, article: action.payload };
+      return { loading: false, success: true, article: action.payload };
     case ARTICLE_UPDATE_FAIL:
       return { loading: false, error: action.payload };
     case ARTICLE_UPDATE_RESET:

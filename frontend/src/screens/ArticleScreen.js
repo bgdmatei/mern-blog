@@ -28,6 +28,13 @@ const ArticleScreen = ({ match }) => {
       <LinkContainer to='/' className='my-3' activeClassName=''>
         <Button variant='outline-secondary'>Go Back</Button>
       </LinkContainer>
+      <LinkContainer
+        to={`/article/${article._id}/edit`}
+        className='my-3'
+        activeClassName=''
+      >
+        <Button variant='outline-secondary'>Edit</Button>
+      </LinkContainer>
     </>
   );
 };
