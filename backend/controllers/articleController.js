@@ -37,4 +37,25 @@ const createArticle = asyncHandler(async (req, res) => {
   res.status(201).json(createdArticle);
 });
 
-module.exports = { getArticles, getArticleById, createArticle };
+// @desc  Update an articles
+// @route  PUT /api/articles/:id
+// @access  Private/Admin
+const updateArticle = asyncHandler(async (req, res) => {
+  const { title, content, image } = req.body;
+
+  const article = await Article.findById(req.params.id);
+
+  if (article) {
+    article.title = title;
+    article.content = content;
+    article.image = image;
+
+    const updatedArticle = await article.save();
+    res.json(updatedArticle);
+  } else {
+    res.status(404);
+    throw new Error('Article not found');
+  }
+});
+
+module.exports = { getArticles, getArticleById, createArticle, updateArticle };

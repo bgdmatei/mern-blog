@@ -6,7 +6,7 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    content: String,
+    content: { type: String, required: true },
     image: String,
   },
   {
