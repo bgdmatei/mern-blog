@@ -12,7 +12,7 @@ const UpdateArticle = ({ match, history }) => {
   const dispatch = useDispatch();
 
   const articleUpdate = useSelector((state) => state.articleUpdate)
-  const {loading: loadingUpdate, success: successUpdate, error: errorUpdate } = articleUpdate
+  const {success: successUpdate} = articleUpdate
 
   useEffect(() => {
     if(successUpdate) {
