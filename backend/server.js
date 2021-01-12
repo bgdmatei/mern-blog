@@ -3,8 +3,8 @@ const path = require('path')
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
-const articleRoutes = require('../backend/routes/articleRoutes');
-const uploadRoutes = require('../backend/routes/uploadRoutes');
+const articleRoutes = require('./routes/articleRoutes');
+const uploadRoutes = require('./routes/uploadRoutes');
 
 dotenv.config();
 
@@ -22,7 +22,8 @@ app.use(express.json());
 app.use('/api/articles', articleRoutes);
 app.use('/api/upload', uploadRoutes)
 
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
+const dirname = path.resolve();
+app.use('/uploads', express.static(path.join(dirname, '/uploads')))
 
 app.use(notFound);
 app.use(errorHandler);

@@ -8,7 +8,7 @@ const Article = ({ article }) => {
     <>
       <Card className='m-3 text-center'>
         <a href={`/article/${article._id}`}>
-          {article.image && <Card.Img variant='top' src={`${article.image}`} />}
+          <Card.Img variant='top' src={article.image} />
           <Card.Body>
             <Card.Title as='div'>
               <div className='my-3'>{article.title}</div>
