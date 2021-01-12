@@ -36,7 +36,13 @@ export const createArticle = (title, content) => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_CREATE_REQUEST });
 
-    const { data } = await axios.post('/api/articles/', { title, content });
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const { data } = await axios.post('/api/articles/', { title, content }, config);
 
     dispatch({
       type: ARTICLE_CREATE_SUCCESS,
