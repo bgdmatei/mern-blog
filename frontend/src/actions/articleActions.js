@@ -57,7 +57,7 @@ export const listArticleDetails = (id) => async (dispatch) => {
   }
 }
 
-export const createArticle = (title, content) => async (dispatch) => {
+export const createArticle = (title, content, image) => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_CREATE_REQUEST });
 
@@ -67,7 +67,7 @@ export const createArticle = (title, content) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post('/api/articles/', { title, content }, config);
+    const { data } = await axios.post('/api/articles/', { title, content, image }, config);
 
     dispatch({
       type: ARTICLE_CREATE_SUCCESS,

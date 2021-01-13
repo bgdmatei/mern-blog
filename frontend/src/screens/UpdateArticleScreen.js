@@ -89,6 +89,7 @@ const UpdateArticle = ({ match, history }) => {
               as='textarea'
               rows={3}
               value={content}
+              placeholder='Write your thoughts...'
               onChange={(e) => setContent(e.target.value)}
             />
           </Form.Group>
