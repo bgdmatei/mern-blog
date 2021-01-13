@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
-import { updateArticle } from '../actions/articleActions';
+import { updateArticle, listArticleDetails } from '../actions/articleActions';
 import { ARTICLE_UPDATE_RESET} from '../constants/articleConstants';
 
 const UpdateArticle = ({ match, history }) => {
@@ -17,12 +17,23 @@ const UpdateArticle = ({ match, history }) => {
   const articleUpdate = useSelector((state) => state.articleUpdate)
   const {success: successUpdate} = articleUpdate
 
+  const articleDetails = useSelector((state) => state.articleDetails)
+  const {article} = articleDetails
+
   useEffect(() => {
     if(successUpdate) {
       dispatch({type: ARTICLE_UPDATE_RESET});
       history.push(`/`);
+    } else {
+      if(!article.title || article._id !== articleId) {
+        dispatch(listArticleDetails(articleId))
+      } else {
+        setTitle(article.title)
+        setContent(article.content)
+        setImage(article.image)
+      }
     }
-  }, [dispatch, history, successUpdate])
+  }, [dispatch, history, successUpdate, article, articleId])
 
   
   const uploadFileHandler = async (e) => {
@@ -57,7 +68,7 @@ const UpdateArticle = ({ match, history }) => {
       })
     );
   };
-  
+
   return (
     <> 
       <Form onSubmit={submitHandler}>

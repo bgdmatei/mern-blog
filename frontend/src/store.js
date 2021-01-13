@@ -5,12 +5,14 @@ import {
   articleListReducer,
   articleCreateReducer,
   articleUpdateReducer,
+  articleDetailsReducer
 } from './reducers/articleReducers';
 
 const reducer = combineReducers({
   articleList: articleListReducer,
   articleCreate: articleCreateReducer,
   articleUpdate: articleUpdateReducer,
+  articleDetails: articleDetailsReducer,
 });
 
 const initialState = {};
