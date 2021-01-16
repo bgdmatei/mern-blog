@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Roboto';
 }
 
 body {
-  background: radial-gradient(#d8bd88a3, #ecc371e0);
+  background: #fff;
 }
 
 .card {
@@ -26,8 +26,4 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
-}
-
-.nav-link {
-  color: black;
 }
