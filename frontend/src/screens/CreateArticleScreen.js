@@ -45,7 +45,6 @@ const CreateArticle = ({ history }) => {
         <Form.Group>
           <Form.Label>Title</Form.Label>
           <Form.Control
-            size='lg'
             type='text'
             value={title}
             placeholder='Enter title'
@@ -72,7 +71,7 @@ const CreateArticle = ({ history }) => {
               value={image}
               onChange={(e) => setImage(e.target.value)}
               />
-              <Form.File id='image-file' label='Choose File' custom onChange={uploadFileHandler}/>
+              <Form.File className="my-2" id='image-file' label='Choose File' custom onChange={uploadFileHandler}/>
               {uploading && <div>Image uploading...</div>}
           </Form.Group>
           

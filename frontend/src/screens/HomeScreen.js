@@ -17,10 +17,10 @@ const HomeScreen = () => {
   return (
     <>
       <h1>Recent Articles</h1>
-      <Row className='justify-content-center'>
+      <Row >
         {articles &&
           articles.map((article) => (
-            <Col key={article._id} sm={12} md={8} lg={8} xl={8}>
+            <Col key={article._id} sm={12} md={4} lg={4} xl={4}>
               <Article article={article} />
             </Col>
           ))}

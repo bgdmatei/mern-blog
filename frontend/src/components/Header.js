@@ -14,12 +14,11 @@ const Header = () => {
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='ml-auto'>
           <LinkContainer to='/'>
-            <Nav.Link href='#'>Home</Nav.Link>
+            <Nav.Link>Home</Nav.Link>
           </LinkContainer>
           <LinkContainer to='/new'>
             <Nav.Link>Create post</Nav.Link>
           </LinkContainer>
-          <Nav.Link href='#'>Profile</Nav.Link>
           <Nav.Link href='#'>Logout</Nav.Link>
         </Nav>
       </Navbar.Collapse>

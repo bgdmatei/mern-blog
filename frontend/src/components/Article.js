@@ -6,7 +6,7 @@ import { Card } from 'react-bootstrap';
 const Article = ({ article }) => {
   return (
     <>
-      <Card className='m-3 text-center'>
+      <Card className='m-3 text-center' style={{ width: '18rem' }}>
         <a href={`/article/${article._id}`}>
           <Card.Img variant='top' src={article.image} />
           <Card.Body>
